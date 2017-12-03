@@ -1,0 +1,48 @@
+<html>
+    <meta charset="utf-8">
+    <head>
+        <script src="jquery-3.2.1.min.js"></script>
+    </head>
+    <body  onmousewheel="return false;">
+        <center><h1>贪吃蛇大作战</h1></center>
+        <div>
+            <div style="float:left">
+                <canvas id="myCanves" width="400" height="400" style="border:1px solid #000000;"></canvas>
+            </div>
+            <div style="float:left">
+                <div id='info'></div>
+                <p id='redlen'></p>
+                <p id='bluelen'></p>
+            </div>
+        </div>
+        <div style="clear:both" ></div>
+        <br/>
+        speed:<input type="text" id = 'speed'>
+        <button id = 'move'>move</button>
+        <script>
+            int = 0;
+            $('#move').click(function(){
+                clearTimeout(int);
+                var speed = $('#speed').val();
+                int = setTimeout('start('+speed+')',speed);
+            });
+            function printlen(){
+                $('#redlen').text('红色蛇长度：' + redArmy.length);
+                $('#bluelen').text('蓝色蛇长度：' + blueArmy.length);
+            }
+            function print(arr){
+                var str = $('#info').html();
+                str +="<br/>" + arr;
+                $('#info').html(str);
+            }
+        </script>
+
+
+
+        <!-- <script src="alpha.js"></script>
+        <script src="blueAlg.js"></script>
+        <script src="greedySnake.js"></script>
+        <script src="tree.js"></script> -->
+        <script src="1.js"></script>
+    </body>
+</html>
